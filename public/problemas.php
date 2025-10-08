@@ -86,6 +86,7 @@ var_dump($contraseñaUsuario === $contraseñaGuardada); //Salida en el navegador
 
 //Problema 2.5: ¿Par o impar?
 echo "<h2>¿Par o Impar?</h2>";
+
 $numero = 7;
 if ($numero % 2 == 0) {
     echo "<br>El número $numero es par.";
@@ -94,15 +95,63 @@ if ($numero % 2 == 0) {
 }
 
 //Problema 3.1: Control de acceso
+echo "<h2>Control de Acceso</h2>";
 
+$edad = 17;
+if ($edad >= 18) {
+    echo "<br>Acceso permitido. Eres mayor de edad.";
+} else {
+    echo "<br>Acceso denegado. Eres menor de edad.";
+}
 
+//Problema 3.2: Calificación de Examen
+echo "<h2>Calificación de Examen</h2>";
 
+$nota = 7.5;
+if ($nota >= 9) {
+    echo "<br>Calificación: Sobresaliente";
+} elseif ($nota >= 7) {
+    echo "<br>Calificación: Notable";
+} elseif ($nota >= 5) {
+    echo "<br>Calificación: Aprobado";
+} else {
+    echo "<br>Calificación: Suspenso";
+}
 
+//Problema 3.3: Menú del Día con switch
+echo "<h2>Menú del Día con switch</h2>";
 
+$diaSemana = "Lunes";
 
+switch ($diaSemana) {
+    case "Lunes":
+        echo "Hoy tenemos lentejas en el menú";
+        break;
+    case "Miercoles":
+        echo "Hoy tenemos paella en el menú";
+        break;
+    case "Viernes":
+        echo "Hoy tenemos pescado al horno en el menú";
+        break;
+    default: //Se ejecuta si $diaSemana no es ninguno de los anteriores
+        echo "Hoy no hay menú del día";
+        break;
 
+        echo $diaSemana;
+}
 
+//Problema 3.4: Verificación de Usuario Avanzada
+echo "<h2>Verificación de Usuario Avanzada</h2>";
+$rolUsuario = "admin";
+$usuarioActivo = "true";
 
+if ($rolUsuario == "admin" && $usuarioActivo == "true") {
+    echo "Acceso concedido";
+} else {
+    echo "Acceso denegado";
+}
+
+//Problema 4.1: Tabla de Multiplicar del 7
 
 
 ?>
