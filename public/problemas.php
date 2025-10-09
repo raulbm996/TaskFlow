@@ -142,6 +142,7 @@ switch ($diaSemana) {
 
 //Problema 3.4: Verificación de Usuario Avanzada
 echo "<h2>Verificación de Usuario Avanzada</h2>";
+
 $rolUsuario = "admin";
 $usuarioActivo = "true";
 
@@ -152,6 +153,86 @@ if ($rolUsuario == "admin" && $usuarioActivo == "true") {
 }
 
 //Problema 4.1: Tabla de Multiplicar del 7
+echo "<h2>Tabla de Multiplicar del 7</h2>";
+
+for ($i = 1; $i <= 10; $i++) {
+    $resultado = 7 * $i;
+    echo "7 x $i = $resultado <br>";
+}
+
+//Problema 4.2: Cuenta atrás para año nuevo con bucle while
+echo "<h2>Cuenta Atrás para Año Nuevo</h2>";
+$i = 10;
+while ($i >= 0) {
+    echo "$i<br>";
+    $i--; //Decremento de i 
+}
+
+echo "¡Feliz Año Nuevo!";
+
+//Problema 4.3: Recorrer Nombres
+echo "<h2>Recorres Nombres</h2>";
+
+$alumnos = ["Ana", "Juan", "Pedro", "Sofía"];
+foreach ($alumnos as $alumno) {
+    echo "Hola $alumno. <br>";
+}
+
+//Problema 4.4: Listado de Productos
+echo "<h2>Listado de Productos</h2>";
+
+$productos = [
+    ["nombre" => "Teclado", "precio" => 50],
+    ["nombre" => "Ratón", "precio" => 25],
+    ["nombre" => "Monitor", "precio" => 200]
+];
+foreach ($productos as $producto) {
+    echo "Producto: " . $producto['nombre'] . " - Precio: " . $producto["precio"] . "€<br>";
+}
+
+//Problema 5.1: Ficha de Usuario
+echo "<h2>Ficha de Usuario</h2>";
+
+$usuarios = [
+    ["nombre" => "Raul", "edad" => 20, "email" => "raulborreguero166@gmail.com", "¿Estudiante?" => "Si"],
+    ["nombre" => "Nico", "edad" => 21, "email" => "nico20@gmail.com", "¿Estudiante?" => "No"]
+];
+foreach ($usuarios as $usuario) {
+    echo "Nombre: " . $usuario['nombre'] . ", " . "Edad: " . $usuario['edad'] . ", " . "Email: " . $usuario['email'] . ", " . "¿Es estudiante?  " . $usuario['¿Estudiante?'] . " " . " <br>";
+}
+
+//Problema 5.2: Filtrado de Notas
+echo "<h2>Filtrado de Notas</h2>";
+
+$notas = [8.5, 4.2, 7.0, 9.8, 5.5, 3.9];
+foreach ($notas as $nota) {
+    if ($nota >= 5) {
+        echo " $nota <br>";
+    }
+}
+
+//Problema 5.3: Lista de la Compra Avanzada
+echo "<h2>Lista de la Compra Avanzada</h2>";
+
+$listaCompra = [
+    "Frutas" => ["Manzanas", "Plátanos", "Naranjas"],
+    "Lácteos" => ["Leche", "Queso"],
+    "Limpieza" => ["Detergente", "Lejía"]
+];
+//Usa bucles foreach anidados para imprimir la lista completa, mostrando primero el nombre de la categoría y luego los productos de esa categoría.
+foreach ($listaCompra as $lista => $tipos) {
+    echo "<h4>Categoría: $lista </h4>";
+    echo "<ul>";
+    foreach ($tipos as $tipo) {
+        echo "<li> $tipo </li>";
+    }
+    echo "</ul>";
+}
+
+
+
+
+
 
 
 ?>
