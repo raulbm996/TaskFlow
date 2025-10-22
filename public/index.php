@@ -1,29 +1,54 @@
 <?php
-    //Bloque de configuración principal
-    define("SITE_NAME","TaskFlow");
-    $pageTitle = "Página de Inicio";
-    $userName = "Raul"; //Tipo String
-    $userAge = "20"; //Tipo Integer
-    $isPremiumUser = true; //Tipo Boolean 
+// Array principal de tareas
+$tasks = [
+    // Tarea 1
+    [
+        'title' => 'Implementar sistema de autenticación',
+        'completed' => false,
+        'priority' => 'alta'
+    ],
 
+    // Tarea 2
+    [
+        'title' => 'Revisar políticas de almacenamiento',
+        'completed' => true,
+        'priority' => 'alta'
+    ],
+
+    // Tarea 3
+    [
+        'title' => 'Configurar copias de seguridad del NAS',
+        'completed' => true,
+        'priority' => 'media'
+    ],
+
+    // Tarea 4
+    [
+        'title' => 'Actualizar documentación técnica',
+        'completed' => false,
+        'priority' => 'baja'
+    ],
+
+    // Tarea 5
+    [
+        'title' => 'Realizar pruebas de restauración',
+        'completed' => false,
+        'priority' => 'media'
+    ]
+];
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title><?php echo $pageTitle;?></title>
-    </head>
-    <body>
-        <header>
-        <h1>Bienvenido a <?php echo SITE_NAME;?></h1>
-        </header>
+include 'header.php';
+<h2>Tareas Pendientes</h2>
+<ul>
+    foreach ($tasks as $task) {
+    $taskClasses = 'task-item';
+    if ($task['completed']) {
+    $classes .= ' completed';
+    }
+    $classes .= ' priority-' . $task['priority'];
 
-        <main>
-            <h2>Perfil del Usuario</h2>
-            <p><strong>Nombre:</strong><?php echo $userName;?></p>
-            <p><strong>Edad:</strong><?php echo $userAge;?>años</p>
-            <p><strong>Estado de la cuenta:</strong>Usuario<?php echo $isPremiumUser? "Premium" : "Estandar";?></p>
-        </main>
-    </body>
-</html>
+    echo "<li class='$classes'>{$task['title']}</li>";
+    }
+</ul>
+include 'footer.php';
