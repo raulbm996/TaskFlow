@@ -1,4 +1,11 @@
 <?php
+//Bloque de configuración principal
+define("SITE_NAME", "TaskFlow");
+$pageTitle = "Página de Inicio";
+$userName = "Raul"; //Tipo String
+$userAge = "20"; //Tipo Integer
+$isPremiumUser = true; //Tipo Boolean 
+
 // Array principal de tareas
 $tasks = [
     // Tarea 1
@@ -38,17 +45,35 @@ $tasks = [
 ];
 ?>
 
-include 'header.php';
+<?php include '../app/views/header.php' ?>
 <h2>Tareas Pendientes</h2>
 <ul>
+    <?php
     foreach ($tasks as $task) {
-    $taskClasses = 'task-item';
-    if ($task['completed']) {
-    $classes .= ' completed';
-    }
-    $classes .= ' priority-' . $task['priority'];
+        // 1. Variable con clase base
+        $taskClasses = 'task-item';
 
-    echo "<li class='$classes'>{$task['title']}</li>";
+        // 2. IF: Comprobar si completada
+        if ($task['completed']) {
+            $taskClasses .= ' completed';
+        }
+
+        // 3. SWITCH: Evaluar prioridad
+        switch ($task['priority']) {
+            case 'alta':
+                $taskClasses .= ' priority-alta';
+                break;
+            case 'media':
+                $taskClasses .= ' priority-media';
+                break;
+            case 'baja':
+                $taskClasses .= ' priority-baja';
+                break;
+        }
+
+        // 4. ECHO: Imprimir <li>
+        echo "<li class=\"{$taskClasses}\">{$task['title']}</li>";
     }
+    ?>
 </ul>
-include 'footer.php';
+<?php include '../app/views/footer.php'; ?>
