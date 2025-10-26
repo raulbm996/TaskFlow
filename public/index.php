@@ -1,6 +1,7 @@
 <?php
-//Bloque de configuración principal
-define("SITE_NAME", "TaskFlow");
+require_once
+    //Bloque de configuración principal
+    define("SITE_NAME", "TaskFlow");
 $pageTitle = "Página de Inicio";
 $userName = "Raul"; //Tipo String
 $userAge = "20"; //Tipo Integer
@@ -50,29 +51,7 @@ $tasks = [
 <ul>
     <?php
     foreach ($tasks as $task) {
-        // 1. Variable con clase base
-        $taskClasses = 'task-item';
-
-        // 2. IF: Comprobar si completada
-        if ($task['completed']) {
-            $taskClasses .= ' completed';
-        }
-
-        // 3. SWITCH: Evaluar prioridad
-        switch ($task['priority']) {
-            case 'alta':
-                $taskClasses .= ' priority-alta';
-                break;
-            case 'media':
-                $taskClasses .= ' priority-media';
-                break;
-            case 'baja':
-                $taskClasses .= ' priority-baja';
-                break;
-        }
-
-        // 4. ECHO: Imprimir <li>
-        echo "<li class=\"{$taskClasses}\">{$task['title']}</li>";
+        renderizarTarea($task);
     }
     ?>
 </ul>
