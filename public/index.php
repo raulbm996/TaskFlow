@@ -1,7 +1,7 @@
 <?php
-require_once
-    //Bloque de configuración principal
-    define("SITE_NAME", "TaskFlow");
+require_once '../app/functions.php';
+//Bloque de configuración principal
+define("SITE_NAME", "TaskFlow");
 $pageTitle = "Página de Inicio";
 $userName = "Raul"; //Tipo String
 $userAge = "20"; //Tipo Integer
